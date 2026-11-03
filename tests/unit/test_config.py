@@ -17,7 +17,7 @@ def test_normalize_database_url_rewrites_render_schemes() -> None:
 
 
 def test_normalize_database_url_keeps_psycopg_urls() -> None:
-    url = "postgresql+psycopg://conduct:conduct@localhost:5432/conduct"
+    url = "postgresql+psycopg://playbook:playbook@localhost:5432/playbook"
     assert normalize_database_url(url) == url
 
 

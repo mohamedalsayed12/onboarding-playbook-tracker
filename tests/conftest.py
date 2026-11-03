@@ -21,7 +21,7 @@ os.environ.setdefault("APP_ENV", "test")
 os.environ.setdefault("LOG_LEVEL", "WARNING")
 os.environ.setdefault(
     "DATABASE_URL",
-    "postgresql+psycopg://conduct:conduct@localhost:5435/conduct_test",
+    "postgresql+psycopg://playbook:playbook@localhost:5435/playbook_test",
 )
 os.environ.setdefault("REDIS_URL", "redis://localhost:6379/0")
 os.environ.setdefault(

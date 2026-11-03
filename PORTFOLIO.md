@@ -2,7 +2,7 @@
 
 Multi-tenant B2B onboarding API and dashboard: tenants, invites, stage progression, reusable playbooks, stuck-user views.
 
-**Demo:** https://conduct-playbook-api.onrender.com/dashboard (cold start ~30–60s; use **View demo data**)  
+**Demo:** https://onboarding-playbook-api.onrender.com/dashboard (cold start ~30–60s; use **View demo data**)  
 **Repo:** https://github.com/mohamedalsayed12/onboarding-playbook-tracker
 
 ## What it demonstrates

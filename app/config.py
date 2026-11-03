@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     app_env: Literal["development", "production", "test"] = "development"
     log_level: str = "INFO"
     database_url: Annotated[str, BeforeValidator(normalize_database_url)] = (
-        "postgresql+psycopg://conduct:conduct@localhost:5432/conduct"
+        "postgresql+psycopg://playbook:playbook@localhost:5432/playbook"
     )
     redis_url: str = "redis://localhost:6379/0"
     invite_expiry_hours: int = 72

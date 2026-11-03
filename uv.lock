@@ -175,7 +175,7 @@ wheels = [
 ]
 
 [[package]]
-name = "conduct-playbook-builder"
+name = "onboarding-playbook-tracker"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

@@ -1,14 +1,10 @@
 # Phase log
 
-What each build phase shipped. Historical PR/release links point at the original development repo (`conduct-playbook-builder`); this repository is the portfolio rebrand.
-
-## Follow-up — Portfolio rebrand
-
-- Renamed product to Onboarding Playbook Tracker; removed company-specific playbook copy from seed data and UI titles.
+What each build phase shipped.
 
 ## Phase 0 — Scaffold
 
-**Branch / release:** `phase-0-scaffold` · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-0-scaffold)
+**Branch / release:** `phase-0-scaffold`
 
 - uv project with ruff, mypy `--strict`, pytest; multi-stage Dockerfile (non-root); Compose for `api`, `postgres`, `redis`, `postgres_test`.
 - Settings via pydantic-settings, DB session dependency, Redis client, structured logging, injectable UTC clock.
@@ -18,7 +14,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 1 — Data model
 
-**Branch / release:** `phase-1-data-model` · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-1-data-model) · commit folded into `da74eb2` catch-up
+**Branch / release:** `phase-1-data-model`
 
 - SQLAlchemy models + Alembic migration: Tenant, User, Invite, StageEvent, StrategistAssignment, Playbook, PlaybookStep.
 - Constraints: email unique per tenant, token hash only, strategist CHECK, assignment composite PK, playbook step uniqueness.
@@ -28,7 +24,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 2 — Core API
 
-**Branch / PR / release:** `phase-2-core-api` · [#8](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/8) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-2-core-api)
+**Branch / PR / release:** `phase-2-core-api`
 
 - Tenant create (copies default playbook), invites/accept, stage advance, user list, playbook + next-steps.
 - Temporary `Phase2TemporaryCaller` auth stub for Phase 3 to replace.
@@ -37,7 +33,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 3 — Security and tenant isolation
 
-**Branch / PR / release:** `phase-3-security` · [#9](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/9) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-3-security) · closes #2
+**Branch / PR / release:** `phase-3-security`
 
 - `POST /auth/token` → short-lived HS256 JWT; `get_current_user` replaces the Phase 2 stub.
 - `accessible_tenant_ids` on every tenant-scoped route; inaccessible tenants → **404 not 403**.
@@ -47,7 +43,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 4 — Rollout summary, stuck users, Redis cache
 
-**Branch / PR / release:** `phase-4-rollout-summary` · [#10](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/10) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-4-rollout-summary) · closes #3
+**Branch / PR / release:** `phase-4-rollout-summary`
 
 - `GET /tenants/{id}/summary`: users per stage, sap_role×stage counts, stuck count, average days per stage from `StageEvent` (SQL aggregates).
 - `GET /tenants/{id}/stuck`: paginated stuck users with days stuck and next playbook step.
@@ -57,7 +53,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 5 — Seed data and polish
 
-**Branch / PR / release:** `phase-5-seed-polish` · [#11](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/11) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-5-seed-polish) · closes #4
+**Branch / PR / release:** `phase-5-seed-polish`
 
 - Idempotent `scripts/seed.py` / `make seed`: Example Manufacturing GmbH + Demo Logistics AG, one strategist on both, admins, 40 end users with StageEvent histories (some stuck), default playbook steps.
 - Shared `app/seed_data.py` constants; factories reuse default playbook steps.
@@ -66,14 +62,14 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 6 — README
 
-**Branch / PR / release:** `phase-6-readme` · [#12](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/12) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-6-readme) · closes #5
+**Branch / PR / release:** `phase-6-readme`
 
 - Full README: pitch, why-it-exists (as assumption), features, Mermaid architecture, security model, quick start + curl walkthrough, testing, decisions link, next steps.
 - Verified host commands: `make up`, `make migrate`, `make seed`, health/auth/tenant/summary curls against local API.
 
 ## Phase 7 — Hardening
 
-**Branch / PR / release:** `phase-7-hardening` · [#13](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/13) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-7-hardening)
+**Branch / PR / release:** `phase-7-hardening`
 
 - Assignment requires actor `require_tenant_access` (blocks self-assign onto foreign tenants).
 - Required `JWT_SECRET` (≥32 chars, no placeholders outside test; reject `local-dev`/`do-not-use` in production); compose + CI pass it.
@@ -92,7 +88,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Phase 8 — Rollout dashboard
 
-**Branch / PR / release:** `phase-8-dashboard` · [#15](https://github.com/mohamedalsayed12/conduct-playbook-builder/pull/15) · [release](https://github.com/mohamedalsayed12/conduct-playbook-builder/releases/tag/phase-8-dashboard)
+**Branch / PR / release:** `phase-8-dashboard`
 
 - Static `app/static/dashboard.html` served at `GET /dashboard` (`FileResponse`, omitted from OpenAPI).
 - `GET /tenants` lists tenants from `accessible_tenant_ids` (strategist assignments / admin’s own); isolation tests included.

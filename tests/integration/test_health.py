@@ -43,7 +43,7 @@ def test_health_returns_503_when_database_is_unreachable(
     app_client: TestClient,
 ) -> None:
     broken_engine = create_engine(
-        "postgresql+psycopg://conduct:conduct@127.0.0.1:1/conduct_test",
+        "postgresql+psycopg://playbook:playbook@127.0.0.1:1/playbook_test",
         pool_pre_ping=True,
         connect_args={"connect_timeout": _PROBE_CONNECT_TIMEOUT_SECONDS},
     )
@@ -110,7 +110,7 @@ def test_health_live_returns_503_when_database_is_unreachable(
     app_client: TestClient,
 ) -> None:
     broken_engine = create_engine(
-        "postgresql+psycopg://conduct:conduct@127.0.0.1:1/conduct_test",
+        "postgresql+psycopg://playbook:playbook@127.0.0.1:1/playbook_test",
         pool_pre_ping=True,
         connect_args={"connect_timeout": _PROBE_CONNECT_TIMEOUT_SECONDS},
     )

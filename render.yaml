@@ -50,5 +50,5 @@ databases:
   - name: onboarding-playbook-db
     plan: free
     postgresMajorVersion: "16"
-    databaseName: conduct
-    user: conduct
+    databaseName: playbook
+    user: playbook

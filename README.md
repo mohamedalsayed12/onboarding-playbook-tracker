@@ -4,7 +4,7 @@ Multi-tenant customer onboarding API and dashboard: create accounts, invite user
 
 Stack: FastAPI · PostgreSQL · Redis · Docker.
 
-**[Live demo →](https://conduct-playbook-api.onrender.com/dashboard)** Click **View demo data** for an instant look. The free host sleeps when idle, so the first load can take up to a minute.
+**[Live demo →](https://onboarding-playbook-api.onrender.com/dashboard)** Click **View demo data** for an instant look. The free host sleeps when idle, so the first load can take up to a minute.
 
 ## Why it exists
 
@@ -56,9 +56,9 @@ Design write-ups: [`docs/decisions.md`](docs/decisions.md). Portfolio one-pager:
 
 Blueprint: [`render.yaml`](render.yaml).
 
-- Dashboard: <https://conduct-playbook-api.onrender.com/dashboard>
-- API docs: <https://conduct-playbook-api.onrender.com/docs>
-- Health: <https://conduct-playbook-api.onrender.com/health>
+- Dashboard: <https://onboarding-playbook-api.onrender.com/dashboard>
+- API docs: <https://onboarding-playbook-api.onrender.com/docs>
+- Health: <https://onboarding-playbook-api.onrender.com/health>
 
 Free web services **cold-start** after idle (~30–60s). Free Postgres is temporary — fine for a portfolio demo.
 
