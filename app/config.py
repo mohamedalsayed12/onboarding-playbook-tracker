@@ -80,5 +80,4 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     """Return the cached settings singleton."""
-    # jwt_secret is required and supplied via env / .env by pydantic-settings.
-    return Settings()  # type: ignore[call-arg]
+    return Settings()  # type: ignore[call-arg]  # jwt_secret from env

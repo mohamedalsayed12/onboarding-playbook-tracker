@@ -17,8 +17,7 @@ TENANT_LOGISTICS = "Demo Logistics AG"
 
 DEFAULT_PLAYBOOK_NAME = "Default deployment playbook"
 
-# Matches Settings.stuck_after_days. Active users are never counted as stuck.
-SEED_STUCK_AFTER_DAYS = 7
+SEED_STUCK_AFTER_DAYS = 7  # keep in sync with Settings.stuck_after_days
 
 USERS_PER_TENANT = 100
 

@@ -294,7 +294,6 @@ function render(summary, stuck) {
   $("kpi-stuck").textContent = summary.stuck_count;
   $("kpi-days").textContent = daysToActive ? daysToActive.toFixed(1) : "–";
 
-  // Funnel
   const funnel = $("funnel");
   funnel.replaceChildren();
   const max = Math.max(1, ...STAGES.map((s) => counts[s] || 0));
@@ -309,7 +308,6 @@ function render(summary, stuck) {
     funnel.append(row);
   }
 
-  // SAP role x stage matrix, shaded by share of the row
   const matrix = $("matrix");
   matrix.replaceChildren();
   const head = el("tr");
@@ -332,7 +330,6 @@ function render(summary, stuck) {
   }
   matrix.append(thead, tbody);
 
-  // Stuck users
   const body = $("stuck-body");
   body.replaceChildren();
   $("stuck-empty").classList.toggle("hidden", stuck.items.length > 0);

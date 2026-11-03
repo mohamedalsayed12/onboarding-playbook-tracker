@@ -325,7 +325,6 @@ def _ensure_end_user(
         return 0
 
     path = _STAGE_PATH[spec.stage]
-    # Walk history so the user arrived at `spec.stage` with the requested dwell time.
     entered_current = now - timedelta(days=spec.days_in_current_stage)
     step_gap = timedelta(days=2)
     timestamps: list[datetime] = []

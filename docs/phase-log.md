@@ -4,8 +4,7 @@ What each build phase shipped. Historical PR/release links point at the original
 
 ## Follow-up — Portfolio rebrand
 
-- Renamed product to **Onboarding Playbook Tracker**; removed company-specific playbook copy from seed data and UI titles.
-
+- Renamed product to Onboarding Playbook Tracker; removed company-specific playbook copy from seed data and UI titles.
 
 ## Phase 0 — Scaffold
 

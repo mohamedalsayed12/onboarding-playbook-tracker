@@ -1,16 +1,16 @@
 # Onboarding Playbook Tracker
 
-Multi-tenant **customer onboarding** API and dashboard: create accounts, invite users, move them through stages with a reusable playbook, and see who is stuck.
+Multi-tenant customer onboarding API and dashboard: create accounts, invite users, move them through stages with a reusable playbook, and see who is stuck.
 
-Built as a **portfolio project** (FastAPI · PostgreSQL · Redis · Docker).
+Stack: FastAPI · PostgreSQL · Redis · Docker.
 
 **[Live demo →](https://conduct-playbook-api.onrender.com/dashboard)** Click **View demo data** for an instant look. The free host sleeps when idle, so the first load can take up to a minute.
 
 ## Why it exists
 
-After a B2B sale, a small customer-success / deployment team often onboards many end users per account. Invites, stage tracking, and “what good looks like” usually live in spreadsheets and people’s heads, so capacity grows mainly by hiring.
+After a B2B sale, a small customer-success team often onboards many end users per account. Invites and stage tracking usually live in spreadsheets, so capacity grows mainly by hiring.
 
-This tool turns that into reusable **playbooks** and a clear view of rollout progress per customer account.
+This tool turns that into reusable playbooks and a clear view of rollout progress per account.
 
 ## Features
 
@@ -107,7 +107,3 @@ Emails are the lowercase name plus `@example.com` (for example `dana.vogel@examp
 | `make lint` | ruff check + format check |
 | `make typecheck` | mypy `--strict` |
 | `make test` | pytest |
-
-## License
-
-Personal portfolio project. See repository for details.
