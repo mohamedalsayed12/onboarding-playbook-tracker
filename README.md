@@ -1,10 +1,20 @@
 # Onboarding Playbook Tracker
 
+**[Live demo →](https://mohamedalsayed12.github.io/onboarding-demo/)**
+
+Click **View demo data** for an instant look (no login). Free host sleeps when idle — first load can take ~30–60s.
+
+![Rollout dashboard](docs/screenshots/dashboard.png)
+
 Multi-tenant customer onboarding API and dashboard: create accounts, invite users, move them through stages with a reusable playbook, and see who is stuck.
 
 Stack: FastAPI · PostgreSQL · Redis · Docker.
 
-**[Live demo →](https://onboarding-playbook-api.onrender.com/dashboard)** Click **View demo data** for an instant look. The free host sleeps when idle, so the first load can take up to a minute.
+| | |
+| --- | --- |
+| Dashboard | <https://mohamedalsayed12.github.io/onboarding-demo/> |
+| API docs | <https://conduct-playbook-api.onrender.com/docs> |
+| Health | <https://conduct-playbook-api.onrender.com/health> |
 
 ## Why it exists
 
@@ -22,8 +32,6 @@ This tool turns that into reusable playbooks and a clear view of rollout progres
 - **Security** — HS256 JWTs, tenant scoping, invite token hashing, no personal data in logs
 - **Seed data** — fictional demo tenants via `make seed` (idempotent)
 - **Rollout dashboard** — browser UI at `/dashboard`
-
-![Rollout dashboard](docs/screenshots/dashboard.png)
 
 ## Architecture
 
@@ -52,15 +60,9 @@ Layers: **routers** = HTTP only; **services** = business rules; **models** = per
 
 Design write-ups: [`docs/decisions.md`](docs/decisions.md). Portfolio one-pager: [`PORTFOLIO.md`](PORTFOLIO.md).
 
-## Live demo (Render free)
+## Deploy your own (Render free)
 
-Blueprint: [`render.yaml`](render.yaml).
-
-- Dashboard: <https://onboarding-playbook-api.onrender.com/dashboard>
-- API docs: <https://onboarding-playbook-api.onrender.com/docs>
-- Health: <https://onboarding-playbook-api.onrender.com/health>
-
-Free web services **cold-start** after idle (~30–60s). Free Postgres is temporary — fine for a portfolio demo.
+Blueprint: [`render.yaml`](render.yaml). In the [Render Dashboard](https://dashboard.render.com): **New → Blueprint** → connect this repo → **Deploy**.
 
 ## Prerequisites
 
