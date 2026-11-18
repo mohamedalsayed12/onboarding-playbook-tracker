@@ -1,3 +1,11 @@
+> **Portfolio overview** — A customer-rollout tool for onboarding many users across multiple B2B accounts without managing every stage in spreadsheets. [Explore the demo](https://mohamedalsayed12.github.io/onboarding-demo/).
+>
+> **Business workflow:** create customer tenants, invite users, advance onboarding stages, apply reusable playbooks, and identify people who may need support.
+>
+> **Engineering decisions:** FastAPI, PostgreSQL, tenant-scoped JWT access, staged state transitions, Redis summary caching with post-commit invalidation, tests and a rollout dashboard.
+
+---
+
 # Onboarding Playbook Tracker
 
 **[Live demo →](https://mohamedalsayed12.github.io/onboarding-demo/)**
